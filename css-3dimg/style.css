@@ -1,0 +1,143 @@
+*{
+	padding:0;
+	margin: 0;
+}
+html{
+	background:linear-gradient(#032861 0%,#000000 80%);
+	height: 100%;  
+	width: 100%;
+	overflow: hidden;
+}
+
+/*满天星*/
+.wall{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+div#midground{
+    background: url("./img/midground.png");
+   /* z-index:1;*/ overflow: hidden;
+    animation: cc 20s linear infinite;
+}
+div#foreground{
+    background: url("./img/foreground.png"); overflow: hidden;
+    /* z-index:2; */
+    animation: cc 10s linear infinite;
+}
+
+@keyframes cc {
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 1000% 0;
+    }
+}
+
+
+.wrap{
+	height: 200px;
+	width: 200px;
+	margin: 250px auto;
+	position: relative;
+	perspective:2000px;
+	/*实现3d效果*/
+	transform-style:preserve-3d; /*	表示所有子元素在3D空间中呈现。*/
+	transform:rotateX(20deg) rotateY(30deg); /*定义转换，只是用 X 轴的值。   定义转换，只是用 Y 轴的值。*/
+	transform-origin: 50% 50% 0; /*单独100px也行*/
+	animation:move 4s linear infinite;
+	/*  linear:每一步的距离和前一步都是相同的，也就是等速
+	若不加linear，那会默认速度会加快然后最后一点距离再减速 */
+}
+/*大正方形样式*/
+.wrap .box{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	opacity: 0.8;
+	transition: 2s;
+}
+/* translateZ(z)  定义 3D 转换，只是用 Z 轴的值。*/
+/* scaleY(y)   通过设置 Y 轴的值来定义缩放转换。*/
+.wrap>img:nth-child(1){
+transform: rotateY(0deg) translateZ(100px);
+}
+.wrap>img:nth-child(2){
+transform: translateZ(-100px) rotateY(180deg);
+}
+.wrap>img:nth-child(3){
+transform: rotateY(90deg) translateZ(100px);
+}
+.wrap>img:nth-child(4){
+transform: rotateY(-90deg) translateZ(100px);
+}
+.wrap>img:nth-child(5){
+transform: rotateX(90deg) translateZ(100px);
+}
+.wrap>img:nth-child(6){
+transform: rotateX(-90deg) translateZ(100px);
+}
+/*小正方形*/
+.wrap .square {
+	display: bloack;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 50px;
+    top:50px;
+}
+.wrap>img:nth-child(7){
+transform: rotateY(0deg) translateZ(50px);
+}
+.wrap>img:nth-child(8){
+transform: translateZ(-50px) rotateY(180deg);
+}
+.wrap>img:nth-child(9){
+transform: rotateY(90deg) translateZ(50px);
+}
+.wrap>img:nth-child(10){
+transform: rotateY(-90deg) translateZ(50px);
+}
+.wrap>img:nth-child(11){
+transform: rotateX(90deg) translateZ(50px);
+}
+.wrap>img:nth-child(12){
+transform: rotateX(-90deg) translateZ(50px);
+}
+@-webkit-keyframes move{
+/* from{transform: rotateX(0deg) rotateY(0deg);}
+to{transform: rotateX(360deg) rotateY(360deg);} */
+/* 上面和下面是一样的 */
+0%{
+  transform: rotateX(0deg) rotateY(0deg);
+}
+100%{
+  transform: rotateX(360deg) rotateY(360deg);
+}
+}
+/* cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 */
+.wrap:hover{
+	cursor:pointer;
+}
+.wrap:hover>img:nth-child(1){
+	transform: rotateY(0deg) translateZ(200px);
+}
+.wrap:hover>img:nth-child(2){
+	transform: translateZ(-200px) rotateY(180deg);
+}
+.wrap:hover>img:nth-child(3){
+	transform: rotateY(90deg) translateZ(200px);
+}
+.wrap:hover>img:nth-child(4){
+	transform: rotateY(-90deg) translateZ(200px);
+}
+.wrap:hover>img:nth-child(5){
+	transform: rotateX(90deg) translateZ(200px);
+}
+.wrap:hover>img:nth-child(6){
+	transform: rotateX(-90deg) translateZ(200px);
+}

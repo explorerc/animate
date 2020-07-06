@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+<title>炫酷文字曲线路径动态运动js动画</title>
+<meta name="keywords" content="炫酷,文字曲线,路径,动态运动,js动画" />
+<meta name="description" content="炫酷文字曲线路径动态运动js动画代码下载。js代码(www.jsdaima.com)" /> 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: coral;
+}
+
+h2 {
+  font-family: 'Microsoft Yahei', monospace;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  width: 515px;
+  height: 168px;
+}
+
+.char {
+  --i: calc(50% / var(--char-total));
+  offset-path: path("M.4 84.1s127.4 188 267.7 0 247.3 0 247.3 0");
+  offset-distance: calc(var(--char-index) * 2rem);
+  position: absolute;
+  animation: move 1500ms infinite alternate forwards var(--delay, 0ms);
+}
+
+h2:nth-child(2) {
+  color: aquamarine;
+}
+h2:nth-child(2) .char {
+  --delay: calc(var(--char-index) * 30ms);
+}
+
+@keyframes move {
+  100% {
+    --i: 2rem;
+    offset-distance: calc((var(--char-index) * 2rem) + 12rem);
+  }
+}
+</style>
+</head>
+<body>
+<h2 data-splitting>www.jsdaima.com</h2>
+<h2 data-splitting>IT资源下载平台</h2>
+<script src="./splitting.min.js"></script>
+
+
+<script>
+Splitting({
+	whitespace: true
+})</script>
+
+</body>
+</html>

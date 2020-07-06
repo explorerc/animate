@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打字游戏</title>
+    <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+    <div id="game">
+        <div id="letter-content"></div>
+        <div class="start">
+            <button onclick="start()" class="start-btn">开始游戏</button>
+        </div>
+        <div class="board">
+            <p>得分：<span id="score">122</span></p>
+            <p>丢失：<span id="lose">11</span></p>
+            <button onclick="end()" class="end-btn">结束游戏</button>
+        </div>
+        <div class="over">
+            <p class="text">游戏结束</p>
+            <p class="result">游戏得分：<span id="last-score">12313</span></p>
+            <p class="again"><button onclick="restart()">再来一局</button></p>
+        </div>
+    </div>
+    <script src="./game.js"></script>
+</body>
+</html>

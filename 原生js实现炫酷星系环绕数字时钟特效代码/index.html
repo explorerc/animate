@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+<title>原生js实现炫酷星系环绕数字时钟特效代码</title>
+<meta name="keywords" content="原生js,炫酷,星系,环绕,数字时钟,特效代码" />
+<meta name="description" content="原生js实现炫酷星系环绕数字时钟特效代码下载。js代码(www.jsdaima.com)" /> 
+<link rel="stylesheet" type="text/css" href="css/www.jsdaima.com.css">
+</head>
+<body>
+<div class="container">
+        <div class="sun"></div>
+        <div class="orbit-1"></div>
+        <div class="orbit-2"></div>
+        <div class="orbit-3"></div>
+        <div class="planet-1" id="hour">
+            <div class="orbit-planet-1"></div>
+            <div class="orbit-planet-2"></div>
+            <div class="orbit-planet-3"></div>
+        </div>
+        <div class="planet-2" id="minute">
+            <div class="orbit-planet-1"></div>
+            <div class="orbit-planet-2"></div>
+            <div class="orbit-planet-3"></div>
+        </div>
+        <div class="planet-3" id="second">
+            <div class="orbit-planet-1"></div>
+            <div class="orbit-planet-2"></div>
+            <div class="orbit-planet-3"></div>
+        </div>
+        <div class="time">
+            <div class="hr"></div>
+            <br>
+            <div class="min"></div>
+        </div>
+        <div class="stars">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+<script>
+setInterval(clock, 1000);
+function clock() {
+    const date = new Date();
+
+    const hours = ((date.getHours() + 11) % 12 + 1);
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
+    const hour = hours * 30;
+    const minute = minutes * 6;
+    const second = seconds * 6;
+    document.querySelector(".hr").innerHTML = hours;
+    document.querySelector(".min").innerHTML = minutes;
+    console.log("Hour: " + hours + " Minute: " + minutes + " Second: " + second);
+
+    document.querySelector('#hour').style.transform = `rotate(${hour}deg)`;
+    document.querySelector('#minute').style.transform = `rotate(${minute}deg)`;
+    document.querySelector('#second').style.transform = `rotate(${second}deg)`;
+}
+</script>
+
+</body>
+</html>

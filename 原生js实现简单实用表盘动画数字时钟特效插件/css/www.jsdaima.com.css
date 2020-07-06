@@ -1,0 +1,59 @@
+* {
+  position: relative;
+}
+body {
+  font-family: 'Microsoft Yahei', cursive;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  height:100vh;
+  padding:0;
+  margin:0;
+  background: #21034f;
+  background: radial-gradient(ellipse at center, #21034f 0%,#21034f 53%,#10012b 100%);;
+}
+svg {
+  width:500px;
+}
+circle {
+  fill: none;
+  stroke: #7f00f566;
+  stroke-width: 6px;
+}
+.hour {
+  stroke: #ff0;
+  stroke-dasharray: .5px 11.5px ;
+  stroke-linecap: round;
+}
+.min {
+  stroke: #ff0;
+  stroke-dasharray: .1px 59.9px;
+  stroke-linecap: round;
+}
+.sec {
+  stroke: #ff0;
+  stroke-dasharray: .1px 59.9px;
+  stroke-dashoffset: 15px;
+  stroke-linecap: round;
+}
+.time {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  color: #fff;
+}
+
+.dwf {
+  position:fixed;
+  bottom:4px;
+  right:10px;
+  background-color:#0003;
+  padding:3px;
+  border-radius:3px;
+  font-size:14px;
+  font-family: Arial, Helvetica;
+  color: #fffa;
+}
